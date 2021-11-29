@@ -1,1 +1,23 @@
+# program to download Youtube Videos
+from pytube import YouTube
+URL = input("Enter the URL of the video:  ")
+yt = YouTube(URL)
 
+# here I am printing some info of the video
+print("Title of the video:  ",yt.title)
+print("Views:  ",yt.views)
+print("Ratings:  ",yt.rating)
+
+# I am choosing the best resolution of the video
+# if you want to download the highest resolution video so use this line
+yt2 = yt.streams.get_highest_resolution() # I am using this one
+# otherwise if you want to download the lowest resolution video so use this one
+# yt3 = yt.streams.get_lowest_resolution() 
+print("Please Wait for a moment!")
+print("Downloading in Progress...")
+yt2.download('C:\\Users\\Sabeer Faisal\\Downloads')# choose the path where You want to download  video
+print("Successfully Downloaded!")
+
+# Now time to run the program
+#  the video has been downloaded
+# don't forget to thumb up the video
